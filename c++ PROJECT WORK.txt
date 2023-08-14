@@ -1,0 +1,148 @@
+ for Beginners
+DSA Tutorial
+Data Structures
+Algorithms
+Array
+Strings
+Linked List
+Stack
+Queue
+Tree
+Graph
+Searching
+Sorting
+Recursion
+Dynamic Programming
+Binary Tree
+Binary Search Tree
+Heap
+Hashing
+Divide & Conquer
+Mathematical
+Geometric
+Bitwise
+Greedy
+Backtracking
+Branch and Bound
+Matrix
+Pattern Searching
+Randomized
+￼
+Related Articles
+Write an Interview Experience
+Share Your Campus Experience
+Find any possible two coordinates of Rectangle whose two coordinates are given
+Count ways to divide C in two parts and add to A and B to make A strictly greater than B
+Parity of final value after repeated circular removal of Kth Integer
+Check if N can be obtained from 1 by repetitively multiplying by 10 or 20
+Count of a, b & c after n seconds for given reproduction rate
+Find Prime Adam integers in the given range [L, R]
+Sum of all the numbers present at given level in Modified Pascal’s triangle
+Largest and Smallest N-digit Hexadecimal Numbers
+Check if X and Y can be made zero by using given operation any number of times
+Find N from the value of N!
+Minimum steps to convert X to Y by repeated division and multiplication
+Surface Area and Volume of Hexagonal Prism
+Program to convert KiloBytes to Bytes and Bits
+Check if a HexaDecimal number is Even or Odd
+Check if N and M can be made equal by increasing N by A and decreasing M by B
+Check whether two numbers are in silver ratio
+Program to calculate Root Mean Square
+Count the minimum steps to reach 0 from the given integer N
+Minimum steps to reach Kaprekar’s Constant
+How to calculate strike rate of a batsman
+Must Do Coding Questions for Companies like Amazon, Microsoft, Adobe, ...
+Merge Sort - Data Structure and Algorithms Tutorials
+QuickSort - Data Structure and Algorithm Tutorials
+Bubble Sort - Data Structure and Algorithm Tutorials
+Tree Traversal Techniques - Data Structure and Algorithm Tutorials
+Binary Search - Data Structure and Algorithm Tutorials
+Arrays in Java
+Insertion Sort - Data Structure and Algorithm Tutorials
+Selection Sort – Data Structure and Algorithm Tutorials
+Understanding the basics of Linked List
+Calculate the CGPA and CGPA % of marks obtained by a Student in N subjects
+￼￼￼
+A
+
+adware
+Read
+Discuss
+Courses
+Practice
+Given an array arr[] of size N which contains the marks of a student in N subjects, the task is to calculate the CGPA and the CGPA percentage of the student. 
+Note: Consider all marks to be out of 100, for each subject.
+
+CGPA(Cumulative Grade Point Average) is the systematic arrangement in the educational stream to get an average of grade points.
+
+Examples:
+
+Input: arr[] = {90, 80, 70, 80, 90} 
+Output: CGPA = 8.2, Percentage = 77.89 
+Explanation: 
+The grade in each subject respectively out of 10 is {9, 8, 7, 8, 9}. 
+The CGPA is the average of all the grades = (9 + 8 + 7 + 8 + 9) / 5 = 8.2 
+The percentage of this CGPA is 77.89.
+
+Input: arr[] = {90, 90, 90, 80, 85} 
+Output: CGPA = 8.7, Percentage = 82.65
+
+Approach: In this article, the CGPA is calculated on a scale of 10.
+
+Input the array from the user containing the marks of the student in N subjects.
+Since the scale is on 10, divide marks in every subject by 10 to find the GPA of the student in each subject.
+The
+average
+of all the GPA’s yield the overall CGPA of the student.
+After finding the CGPA, the CGPA percentage can be calculated by the formula:
+CGPA% = CGPA * 9.5
+This is a general formula for a scale of 10. However, if the entire calculation is made on a scale of 4, this 9.5 is thereby multiplied by 2.5 and the CGPA percentage is found by multiplying with 23.75.
+Below is the implementation of the above approach:
+
+C++
+// C++ program to calculate the CGPA
+// and CGPA percentage of a student
+#include<bits/stdc++.h>
+using namespace std;
+ 
+double CgpaCalc(double marks[], int n)
+{
+    // Variable to store the grades in
+    // every subject
+    double grade[n];
+ 
+    // Variables to store CGPA and the
+    // sum of all the grades
+    double cgpa, sum = 0;
+ 
+    // Computing the grades
+    for(int i = 0; i < n; i++)
+    {
+       grade[i] = (marks[i] / 10);
+    }
+ 
+    // Computing the sum of grades
+    for(int i = 0; i < n; i++)
+    {
+       sum += grade[i];
+    }
+ 
+    // Computing the CGPA
+    cgpa = sum / n;
+ 
+    return cgpa;
+}
+ 
+// Driver code
+int main()
+{
+    int n = 5;
+    double marks[] = { 90, 80, 70, 80, 90 };
+ 
+    double cgpa = CgpaCalc(marks, n);
+         
+    cout << "CGPA = ";
+    printf("%.1f\n", cgpa);
+    cout << "CGPA Percentage = ";
+    printf("%.2f", cgpa * 9.5);
+}
